@@ -25,6 +25,10 @@
 .mar30 {
   min-width: 61px;
 }
+.mar30 {
+  margin-right: -42px; /* Adjust the margin as needed */
+}
+
 .marWeek3Parent {
   width: 268.1px;
   display: flex;
