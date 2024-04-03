@@ -1,0 +1,49 @@
+.theRoadAhead {
+  width: 390px;
+  position: relative;
+  line-height: 120%;
+  text-transform: uppercase;
+  display: inline-block;
+  white-space: nowrap;
+
+}
+.ff,
+.theRoadAheadWrapper {
+  display: flex;
+  align-items: flex-start;
+}
+.theRoadAheadWrapper {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 var(--padding-xl);
+  text-align: center;
+  font-size: 45px;
+  color: var(--color-white);
+  font-family: var(--font-krungthep);
+}
+.ff {
+  width: auto;
+  height: auto;
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 45px 1.9px 329.7px;
+  box-sizing: border-box;
+  gap: 320px;
+  background-image: url(/public/ff@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 725px) {
+  .ff {
+    gap: 156px 312.1px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .ff {
+    gap: 78px 312.1px;
+  }
+}
