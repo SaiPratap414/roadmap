@@ -441,6 +441,7 @@
   color: var(--color-white);
   font-family: var(--font-jetbrains-mono);
 }
+
 @media screen and (max-width: 450px) {
   .presaleIdo,
   .stealthLaunchXyzContainer {
@@ -458,4 +459,3 @@
     line-height: 28px;
   }
 }
-

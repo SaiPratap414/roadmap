@@ -5,7 +5,8 @@
   text-transform: uppercase;
   display: inline-block;
   white-space: nowrap;
-
+  position: fixed;
+  margin-top: 20px;
 }
 .ff,
 .theRoadAheadWrapper {
@@ -24,8 +25,8 @@
 }
 .ff {
   width: auto;
-  height: auto;
-  position: relative;
+  height: 100vh;
+  /* position: relative; */
   flex-direction: column;
   justify-content: flex-start;
   padding: 45px 1.9px 329.7px;
@@ -35,8 +36,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
+  background-attachment: fixed;
   letter-spacing: normal;
 }
+
 @media screen and (max-width: 725px) {
   .ff {
     gap: 156px 312.1px;
