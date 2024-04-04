@@ -8,7 +8,10 @@ const FF: FunctionComponent = () => {
       <header className={styles.theRoadAheadWrapper}>
         <div className={styles.theRoadAhead}>the road ahead</div>
       </header>
+
       <FrameComponent />
+
+      <img src="/vector.svg" style={{margin: '0 auto'}} />
     </div>
   );
 };

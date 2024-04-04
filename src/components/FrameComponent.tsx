@@ -1,33 +1,78 @@
-import { FunctionComponent, memo } from "react";
+import { FunctionComponent, memo, useEffect, useRef, useState } from "react";
 import styles from "./FrameComponent.module.css";
 
+import Slider from "react-slick";
+
+// Import css files
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const FrameComponent: FunctionComponent = memo(() => {
+
+  const [noOfSlides, setNoOfSlides] = useState(4);
+
+  useEffect(() => {
+    // console.log("called")
+    if(window.innerWidth > 1080) {
+      setNoOfSlides(5);
+    } else if (window.innerWidth > 840) {
+      setNoOfSlides(4);
+    } else if (window.innerWidth > 600) {
+      setNoOfSlides(3);
+    } else if (window.innerWidth > 400) {
+      setNoOfSlides(2);
+    } else {
+      setNoOfSlides(1);
+    }
+  }, [window])
+
+  var settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: noOfSlides,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 5000,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    pauseOnHover: true
+  };
+
   return (
     <section className={styles.frameParent}>
-      <div className={styles.lineWrapper}>
+      <Slider {...settings}>
+        
+      {/* <div className={styles.lineWrapper}>
         <div className={styles.frameChild} />
-      </div>
-      <div className={styles.frameWrapper}>
-        <div className={styles.frameGroup}>
-          <div className={styles.marWeek3Parent}>
-            <div className={styles.marWeek3}>MAR week 3</div>
-            <div className={styles.mar30}>MAR 30</div>
+      </div> */}
+      {/* <div className={styles.frameWrapper}> */}
+
+      <div className={styles.frameWrapper2}>
+        <div className={styles.aprWeek3Parent}>
+          <b className={styles.aprWeek3}>MAR WEEK 3</b>
+          <div className={styles.gameMainnetParent}>
+            <div className={styles.gameMainnet}>
+              <p className={styles.game1}>{`PRESALE `}</p>
+              <p className={styles.mainnet}>+IDO</p>
+            </div>
+            {/* <div className={styles.lineWrapper3}>
+              <div className={styles.frameChild6} />
+            </div> */}
           </div>
-          <div className={styles.presaleIdoParent}>
-            <div className={styles.presaleIdo}>
-              <p className={styles.presale}>presale</p>
-              <p className={styles.ido}>+IDO</p>
+        </div>
+      </div>
+
+      <div className={styles.frameWrapper2}>
+        <div className={styles.aprWeek3Parent}>
+          <b className={styles.aprWeek3}>MAR 30</b>
+          <div className={styles.gameMainnetParent}>
+            <div className={styles.gameMainnet}>
+              <p className={styles.game1}>{`STEALTH LAUNCH `}</p>
+              <p className={styles.mainnet}>$XYZ ON ETH</p>
             </div>
-            <div className={styles.lineContainer}>
-              <div className={styles.frameItem} />
-            </div>
-            <div className={styles.stealthLaunchXyzContainer}>
-              <p className={styles.stealthLaunch}>Stealth Launch</p>
-              <p className={styles.xyzOnEth}>$xyz on Eth</p>
-            </div>
-            <div className={styles.lineFrame}>
-              <div className={styles.frameInner} />
-            </div>
+            {/* <div className={styles.lineWrapper3}>
+              <div className={styles.frameChild6} />
+            </div> */}
           </div>
         </div>
       </div>
@@ -42,7 +87,7 @@ const FrameComponent: FunctionComponent = memo(() => {
                 <p className={styles.airdropAnd}>{`Airdrop and `}</p>
                 <p className={styles.partnerships}>Partnerships</p>
               </div>
-              <div className={styles.frameChild1} />
+              {/* <div className={styles.frameChild1} /> */}
             </div>
           </div>
         </div>
@@ -68,9 +113,9 @@ const FrameComponent: FunctionComponent = memo(() => {
             <div className={styles.frameChild3} />
             <b className={styles.aprWeek11}>APR week 1</b>
             <div className={styles.frameParent1}>
-              <div className={styles.lineWrapper1}>
+              {/* <div className={styles.lineWrapper1}>
                 <div className={styles.frameChild4} />
-              </div>
+              </div> */}
               <div className={styles.gameTestnet}>
                 <p className={styles.game}>{`Game `}</p>
                 <p className={styles.testnet}>testnet</p>
@@ -87,9 +132,9 @@ const FrameComponent: FunctionComponent = memo(() => {
               <p className={styles.nftArt}>NFT art</p>
               <p className={styles.reveal}>Reveal</p>
             </div>
-            <div className={styles.lineWrapper2}>
+            {/* <div className={styles.lineWrapper2}>
               <div className={styles.frameChild5} />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -101,12 +146,13 @@ const FrameComponent: FunctionComponent = memo(() => {
               <p className={styles.game1}>{`game `}</p>
               <p className={styles.mainnet}>mainnet</p>
             </div>
-            <div className={styles.lineWrapper3}>
+            {/* <div className={styles.lineWrapper3}>
               <div className={styles.frameChild6} />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
+      </Slider>
     </section>
   );
 });
