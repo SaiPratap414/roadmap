@@ -411,6 +411,24 @@
   justify-content: flex-start;
   padding: var(--padding-6xl-3) 0 0;
 }
+
+/* Add this CSS to your FrameComponent.module.css file */
+
+/* Add this CSS to your FrameComponent.module.css file */
+
+.upcomingParent:hover  {
+  font-size: 1.2em; /* Increase font size on hover */
+}
+
+.aprWeek2Parent:hover .nftArtRevealContainer {
+  font-size: 1.3em; /* Increase font size on hover */
+  color: white; /* Change text color to white on hover */
+}
+.aprWeek3Parent:hover .gameMainnetParent {
+  font-size: 2em; /* Increase font size on hover */
+  color: white; /* Change text color to white on hover */
+}
+
 .frameParent {
   align-self: stretch;
   flex-direction: row;
